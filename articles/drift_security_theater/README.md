@@ -315,10 +315,19 @@ The transition from a "secure 2-of-5 multisig" to a malicious takeover is comple
     };
 
     // Process the update_withdraw_guard_threshold instruction
-    let _update_withdrawal_guard_threshold_result = context.process_and_validate_instruction(
-        &update_withdraw_guard_threshold_instrucion,
-        &[Check::success()],
+    let recent_blockhash = rpc_client.get_latest_blockhash().await.unwrap();
+
+    let update_withdraw_guard_threshold_tx = Transaction::new_signed_with_payer(
+        &[update_withdraw_guard_threshold_instrucion],
+        Some(&multisig_malicious_member.pubkey()),
+        &[multisig_malicious_member],
+        recent_blockhash,
     );
+
+    let update_withdraw_guard_threshold_res = rpc_client
+        .send_and_confirm_transaction(&update_withdraw_guard_threshold_tx)
+        .await
+        .unwrap();
 ```
 
 That's it.
