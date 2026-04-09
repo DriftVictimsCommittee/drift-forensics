@@ -15,7 +15,7 @@ To drain the protocol, the exploiter didn't need to "hack" the math - just neede
 
 Once access was gained, more than 20 transactions of [update_withdraw_guard_threshold](https://github.com/drift-labs/protocol-v2/blob/master/programs/drift/src/instructions/admin.rs#L2943) were executed across drift `spot market accounts`, [raising](2G4hth28eShpHz1ABjG3e2SVytetRnyQo2MEe1Mp2ggoJw59oaN8BrF8UE9HY54ddkpquWffjysMogWQTNgg9hqy) the limits to an astronomical `500,000,000,000,000`.
 
-Combined with artificially inflated collateral, this `open door` allowed the instant removal proticol liquidity.
+Combined with artificially inflated collateral, this `open door` allowed the instant removal protocol liquidity.
 
 
 ## 2. The $500M+ TVL & Single Point of Failure
@@ -43,7 +43,7 @@ In our simulation, we replaced Drift's `Config Authority` with a test key. We de
 
 >   **Technical note:**  
 >   We used `dd` binary injection to ensure the account state remains identical to production, except for the authorized public key.  
->   You can `check` this out [here](https://github.com/DriftVictimsCommittee/drif-forensic/exploit_test)
+>   You can `check` this out [here](https://github.com/DriftVictimsCommittee/drift-forensics/tree/main/exploit_test)
 
 ### Step 1: Hijacking the Multisig Council
 
@@ -99,7 +99,7 @@ Next, we `lower` the quorum threshold to 1:
 
 ```
 
-Then porcess `both instructions` in the `single` transaction:
+Then process `both instructions` in the `single` transaction:
 
 ```rust
     // ...
@@ -130,7 +130,7 @@ At this point, the "Multisig" effectively dies - one signature now controls `eve
 
 With the `quorum threshold at 1`, we execute a batch transaction that `creates`, `approves`, and `executes` a proposal to change the `Admin` of Drift V2 core program state:
 
-Prepare `UpdateAdmin` instruction message for futher `governance process`:
+Prepare `UpdateAdmin` instruction message for further `governance process`:
 
 ```rust
     // ...
