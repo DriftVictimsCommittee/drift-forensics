@@ -1,0 +1,19 @@
+[package]
+name = "nonce-check-test"
+version = "0.1.0"
+homepage.workspace = true
+keywords.workspace = true
+edition.workspace = true
+
+[dependencies]
+base64 = { workspace = true }
+futures = { workspace = true }
+solana-account = { workspace = true }
+solana-account-decoder-client-types = { workspace = true }
+solana-client = { workspace = true }
+solana-pubkey = { workspace = true }
+solana-system-interface = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+
+[dev-dependencies]
