@@ -626,6 +626,12 @@ checksum = "9e1b586273c5702936fe7b7d6896644d8be71e6314cfe09d3167c95f712589e8"
 
 [[package]]
 name = "base64"
+version = "0.21.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d297deb1925b89f2ccc13d7635fa0714f12c87adce1c75356b39ca9b7178567"
+
+[[package]]
+name = "base64"
 version = "0.22.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6"
@@ -2515,6 +2521,21 @@ checksum = "d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a"
 dependencies = [
  "memchr",
  "minimal-lexical",
+]
+
+[[package]]
+name = "nonce-check-test"
+version = "0.1.0"
+dependencies = [
+ "base64 0.21.7",
+ "futures",
+ "solana-account",
+ "solana-account-decoder-client-types",
+ "solana-client",
+ "solana-pubkey 3.0.0",
+ "solana-system-interface 3.2.0",
+ "thiserror 1.0.69",
+ "tokio",
 ]
 
 [[package]]
