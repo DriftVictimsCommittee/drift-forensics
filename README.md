@@ -21,7 +21,7 @@ The investigation demonstrates that the loss of funds was not due to a sophistic
 
 ## ⚖️ Legal & Technical Context
 
-This repository supports the materials, which outlines:
+This repository supports the [Investigative Memorandum #2026-04-DRFT](./reports/MEMORANDUM-2026-04-DRFT.md), which outlines:
 - Breach of Fiduciary Duty
 - Material Misrepresentation of Security Architecture
 - Gross Negligence in Governance Procedures
